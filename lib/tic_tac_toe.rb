@@ -48,17 +48,30 @@ end
 def over?(board)
   if full?(board) == true || won?(board) != false
     return true
+<<<<<<< HEAD
    else return false
+=======
+  else return false
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
 end
 end
 
 def input_to_index(user_input)
+<<<<<<< HEAD
   index = user_input.to_i - 1
 end
 
 def move(board, index, current_player)
   board[index] = current_player
  end
+=======
+  user_input.to_i - 1
+end
+
+def move(board, index, current_player = "X")
+  board[index] = current_player
+end
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
 
 def position_taken?(board, location)
   board[location] != " " && board[location] != ""
@@ -73,10 +86,17 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
+<<<<<<< HEAD
     current_player = current_player(board)
     move(board, index, current_player)
     display_board(board)
   else turn(board)
+=======
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
   end
 end
 
@@ -127,7 +147,11 @@ def draw?(board)
 end  
   
 def over?(board)
+<<<<<<< HEAD
   if full?(board) == true || won?(board) != false || draw?(board) == true
+=======
+  if full?(board) == true || won?(board) != false
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
     return true
   else return false
 end
@@ -153,16 +177,29 @@ def input_to_index(user_input)
 end
 
 def play(board)
+<<<<<<< HEAD
    while over?(board) != true
    turn(board)
+=======
+ while over?(board) != true
+   if draw?(board) != true
+  turn(board)
+   elsif draw?(board) == true
+     puts "Cat's Game!"
+  end
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
   end
   if over?(board) == true
     if winner(board) == "O"
     puts "Congratulations O!"
     elsif winner(board) == "X"
     puts "Congratulations X!"
+<<<<<<< HEAD
     elsif draw?(board) == true
       puts "Cat's Game!"
+=======
+  
+>>>>>>> f506d42c9856a2ba7c586bd4b8eefc8f76a9b539
 end 
 end
 end
